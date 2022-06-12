@@ -4,18 +4,18 @@ import java.time.LocalDate;
 
 public class User {
 
-
+    private Integer id;
     private String email;
     private String nickname;
     private LocalDate birthdate;
 
 
-    public User(String email, String nickname, LocalDate birthdate) {
+    public User(Integer id, String email, String nickname, LocalDate birthdate) {
+        this.id = id;
         this.email = email;
         this.nickname = nickname;
         this.birthdate = birthdate;
     }
-
 
 
     public String getEmail() {
@@ -42,7 +42,13 @@ public class User {
         this.birthdate = birthdate;
     }
 
+    public Integer getId() {
+        return id;
+    }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     @Override
     public boolean equals(Object o) {

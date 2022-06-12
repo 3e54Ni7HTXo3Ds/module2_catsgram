@@ -31,6 +31,13 @@ public class UserController {
         return userService.findAll();
     }
 
+    @GetMapping("/users/{userId}")
+    public Optional<User> findById(@PathVariable int userId) {
+        return userService.findAll().stream()
+                .filter(x -> x.getId() == userId)
+                .findFirst();
+    }
+
     @PostMapping(value = "/users")
     public User create(@RequestBody User user) throws UserAlreadyExistException, InvalidEmailException {
         return userService.create(user);

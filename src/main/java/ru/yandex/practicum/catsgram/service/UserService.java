@@ -9,6 +9,8 @@ import java.util.HashSet;
 
 @Service
 public class UserService {
+
+
     private final HashSet<User> users = new HashSet<>();
 
     public HashSet<User> findAll() {
